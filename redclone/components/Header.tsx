@@ -11,7 +11,7 @@ function header() {
   return (
     <div className='flex sticky top-0 z-50 px-4 py-3 shadow-sm '>
       <div className="headerlogo relative h-5 w-10 flex-shring-0 cursor-pointer">
-          {/*  width: 5%;
+          {/* consider this approach: width: 5%;
             display: flex;
             align-items: center;
             justify-content: center;
