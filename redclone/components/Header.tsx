@@ -53,7 +53,7 @@ function header() {
       </div>
 
       <div className="group flex items-center space-x-2 mx-5 px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black">
-         <i class="headicon bi bi-arrows-expand group-hover:text-slate-50"></i>
+         <i className="headicon bi bi-arrows-expand group-hover:text-slate-50"></i>
       </div>
 
     </div>
