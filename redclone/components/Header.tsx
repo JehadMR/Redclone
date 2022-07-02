@@ -9,7 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function header() {
   return (
-    <div className="flex sticky top-0 z-50 px-8 py-4  ">
+    <div className="flex sticky top-0 z-50 md:px-8 py-4  ">
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
         <Image objectFit="contain" src={logomain} layout="fill" />
         </div>
@@ -23,7 +23,7 @@ function header() {
       </div>
       {/* NAVBAR STARTS HERE! */}
       
-      <nav className="container mx-auto flex flex-wrap items-center justify-between px-5">
+      <nav className="flex flex-wrap items-center justify-between mx-1 lg:ml-20 px-5">
           <div className="hidden md:block w-full md:w-auto" id="mobile-menu">
             <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
               <li>
@@ -40,11 +40,21 @@ function header() {
        </nav>
         {/* NAVBAR ENDS HERE! */}
 
-      <form>
-          <i className="bi bi-search h-6 w-6 text-gray-400"></i>
+      <form className="group flex flex-1 items-center px-2 space-x-2 border border-gray rounded-md hover:border-black">
+          <i className="bi bi-search h-6 w-6 text-gray-400 group-hover:text-black text-sm font-medium"></i>
+          <input className="flex-1 bg-transparent outline-none text-sm font-medium " type="text" placeholder="Search Meowdi"></input>
+          <button type="submit" hidden />
       </form>
 
+      <div className="hidden items-center space-x-2 mx-5 lg:inline-flex">
+          <i className="headicon bi bi-app-indicator"></i>
+          <i className="headicon bi bi-envelope-fill"></i>
+          <i className="headicon bi bi-plus-square-dotted"></i>
+      </div>
 
+      <div className="group flex items-center space-x-2 mx-5 px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black">
+         <i class="headicon bi bi-arrows-expand group-hover:text-slate-50"></i>
+      </div>
 
     </div>
   )
