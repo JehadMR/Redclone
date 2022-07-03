@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
+import { useSession } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 
 const Home: NextPage = () => {
+  const {data: session } = useSession();
   return (
     <div className="">
       <Head>
@@ -14,9 +16,11 @@ const Home: NextPage = () => {
         <Header/>
 
         <p className="mt-3 text-2xl">
-         Roads always have a begining{' '}
+         Signed In As :{' '}
           <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            innit?!!?
+          {}
+            {session?.token?.name} <br/>
+            {session?.token?.email}
           </code>
         </p>
 

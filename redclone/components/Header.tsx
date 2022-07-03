@@ -12,6 +12,8 @@ import { signIn, signOut, useSession } from "next-auth/react"
 
 function header() {
   const {data: session } = useSession();
+
+ 
   return (
     <div className="flex sticky top-0 z-50 md:px-8 py-4" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
@@ -63,7 +65,9 @@ function header() {
       {session ? (
         <div className="flex relative items-center h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full"
              onClick={() => signOut()}>
-        <Image objectFit="contain" src={profilepic} alt="profile"  layout="fill" />
+        <Image
+        className="-z-1 rounded-full"
+         objectFit="cover" src={session?.token?.picture} alt="profile"  layout="fill" />
         </div>
       ): (
         <div className="group hidden lg:flex flex-shrink-0 items-center px-2  xl:min-w-[50px] border border-black rounded-md shadow-sm hover:cursor-pointer "
@@ -82,6 +86,8 @@ function header() {
       <div className="flex relative items-center h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full">
           <Image objectFit="contain" src={profilepic} alt="profile"  layout="fill" />
       </div> */}
+
+     
 
     </div>
   )
