@@ -1,7 +1,9 @@
 import Image from "next/image"
 import React from "react"
 import logomain from "./siteimages/logomain.png"
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import "bootstrap-icons/font/bootstrap-icons.css"
+import profilepic from "./siteimages/profilepic.svg"
+import { profile } from "console"
 
 
 
@@ -9,7 +11,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function header() {
   return (
-    <div className="flex sticky top-0 z-50 md:px-8 py-4  ">
+    <div className="flex sticky top-0 z-50 md:px-8 py-4" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
         <Image objectFit="contain" src={logomain} layout="fill" />
         </div>
@@ -51,10 +53,18 @@ function header() {
           <i className="headicon bi bi-envelope-fill"></i>
           <i className="headicon bi bi-plus-square-dotted"></i>
       </div>
-
-      <div className="group flex items-center space-x-2 mx-5 px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black">
+    
+      <div className="group flex items-center justify-center space-x-2 mx-5 px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black">
          <i className="headicon bi bi-arrows-expand group-hover:text-slate-50"></i>
       </div>
+
+      <div className="group hidden lg:flex flex-shrink-0 items-center px-2  xl:min-w-[50px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
+          <i className="bi bi-person-plus-fill w-5 h-5"></i>
+          <p className="flex-1 hidden ml-1 lg:inline text-sm font-medium 	">Sign In</p>
+      </div>
+     {/* <div className="flex relative items-center h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full">
+          <Image objectFit="contain" src={profilepic} alt="profile"  layout="fill" />
+      </div> */}
 
     </div>
   )
