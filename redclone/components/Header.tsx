@@ -67,7 +67,7 @@ function header() {
              onClick={() => signOut()}>
         <Image
         className="-z-1 rounded-full"
-         objectFit="cover" src={session?.token?.picture} alt="profile"  layout="fill" />
+         objectFit="cover" src={session?.token?.picture? session.token.picture : profilepic} alt="profile"  layout="fill" />
         </div>
       ): (
         <div className="group hidden lg:flex flex-shrink-0 items-center px-2  xl:min-w-[50px] border border-black rounded-md shadow-sm hover:cursor-pointer "

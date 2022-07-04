@@ -36,12 +36,14 @@ const Home: NextPage = () => {
 
         {/* PLATLISTS THINGY  */}
         <button onClick={() => getMyPlaylists()}>Get all my playlists</button>
-        {list.map((item) => (
-          <div key={item.id}>
+        <div className='group flex items-center  justify-between mx-1 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ' >
+        {list.map((item, i) => (
+            <div key={item.id}>
             <h1>{item.name}</h1>
-            <img src={item.images[0]?.url} width="100" />
-          </div>
-        ))}
+            <img className='border rounded-sm shadow-sm' src={item.images[0]?.url} width="100" />
+            </div>
+          
+        ))} </div>
 
       
     </div>
