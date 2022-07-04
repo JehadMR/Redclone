@@ -2,10 +2,19 @@ import type { NextPage } from 'next'
 import { useSession } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import Header from '../components/Header'
 
 const Home: NextPage = () => {
   const {data: session } = useSession();
+  const [list, setList] = useState([]);
+
+  const getMyPlaylists = async () => {
+    const res = await fetch('/api/playlists');
+    const {items} = await res.json();
+    setList(items);
+  };
+
   return (
     <div className="">
       <Head>
@@ -23,6 +32,16 @@ const Home: NextPage = () => {
             {session?.token?.email}
           </code>
         </p>
+
+
+        {/* PLATLISTS THINGY  */}
+        <button onClick={() => getMyPlaylists()}>Get all my playlists</button>
+        {list.map((item) => (
+          <div key={item.id}>
+            <h1>{item.name}</h1>
+            <img src={item.images[0]?.url} width="100" />
+          </div>
+        ))}
 
       
     </div>
