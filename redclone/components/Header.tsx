@@ -1,5 +1,7 @@
-import Image from "next/image"
 import React from "react"
+import { useEffect, useState } from "react"
+import Image from "next/image"
+
 import logomain from "./siteimages/logomain.png"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import profilepic from "./siteimages/profilepic.svg"
@@ -13,15 +15,13 @@ import { signIn, signOut, useSession } from "next-auth/react"
 function header() {
   const {data: session } = useSession();
 
- 
   return (
-    <div className="flex sticky top-0 z-50 md:px-8 py-4" >
+      <div className="flex sticky top-0 z-50 md:px-8 py-2
+                    backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
         <Image objectFit="contain" src={logomain} layout="fill" />
         </div>
 
-
-     
        <div className="group flex items-center mx-1 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
           <i className="bi bi-textarea-resize w-5 h-5 "></i>
           <p className="flex-1 hidden ml-1 lg:inline text-sm font-medium 	">Spaces</p>
