@@ -22,7 +22,7 @@ function ProfileCard () {
             <div className="overflow-hidden z-50 relative max-w-md mx-auto bg-white shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6 dark:bg-slate-800 dark:highlight-white/5">
             { session? 
             <img className="absolute -left-6 w-28 h-28 rounded-full shadow-lg object-cover" src={session?.token?.picture }/> 
-            : <Image className="absolute -left-6 w-28 h-28 rounded-full shadow-lg object-cover" src={profilepic}  /> }
+            : <Image className="absolute -left-6 w-28 h-28 rounded-full shadow-lg object-cover" src={profilepic} width='100%'  /> }
            {/* <Image
              className="absolute -left-6 w-4 h-4 rounded-full shadow-lg"
              objectFit="cover" src={session?.token?.picture? session.token.picture : profilepic} alt={session?.user?.name}  layout="fill" />
