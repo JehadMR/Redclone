@@ -16,22 +16,21 @@ const Home: NextPage = () => {
 
   return (
     <>
-       <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
-        <div className="w-[108rem] flex justify-end">
-          <Image src={bodybackground} className="w-[71.75rem]  flex-none max-w-none" layout="intrinsic" />
-          
-        </div>
-        </div>
-    <div className="">
+    
       <Head>
         <title>Red Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+        <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+        <div className="w-[108rem] flex justify-end">
+          <Image src={bodybackground} className="w-[71.75rem]  flex-none max-w-none" layout="intrinsic" />
+        </div>
+        </div>
 
         <Header/>
         <Albumstracks/>
 
-    </div>
+    
     </>
   )
 }

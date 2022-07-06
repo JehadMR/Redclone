@@ -39,7 +39,7 @@ function Albumstracks() {
       </div>
 
     <div className='flex  justify-center'>
-    <div className='group grid gap-4 grid-cols-3 grid-rows-3 mx-1 md:mx-10   xl:min-w-[800px]' >
+    <div className='group grid gap-1 grid-cols-1 sm:gap-4 sm:grid-cols-3 grid-rows-3 mx-1 md:mx-10   xl:min-w-[800px]' >
     {playlists.map((item, i) => (
         <div key={item.id} className="border flex-col justify-center items-center p-1 m-1 mb-0 rounded-md shadow-sm hover:cursor-pointer">
         <h1>{item.name}</h1>
