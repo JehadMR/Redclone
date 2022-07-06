@@ -25,7 +25,6 @@ function Albumstracks() {
   const getMyTracks = async () => {
     const res = await fetch('/api/tracks');
     const {items} = await res.json();
-    console.log(items);
     setTracks(items);
   };
   

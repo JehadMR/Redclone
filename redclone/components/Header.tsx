@@ -16,7 +16,7 @@ function header() {
 
   return (
     <div className="flex sticky top-0 z-50 md:px-8 py-2
-                     backdrop-blur transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
+                     backdrop-blur transition-colors duration-500 lg:z-50 border-b border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
         <Image objectFit="contain" src={logomain} layout="fill" />
         </div>
