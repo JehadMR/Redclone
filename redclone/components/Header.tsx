@@ -66,8 +66,8 @@ function header() {
         <div className=" relative hidden items-center sm:flex md:shrink-0 min-w-10 h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full"
              onClick={() => signOut()}>
         <Image
-        className="-z-1 rounded-full"
-         objectFit="cover" src={session?.token?.picture? session.token.picture : profilepic} alt="profile"  layout="fill" />
+        className="-z-1 rounded-full relative"
+         objectFit="cover" src={session?.token?.picture? session.token.picture : profilepic} alt={session.user?.name}  layout="fill" />
         </div>
       ): (
         <div className="group hidden lg:flex flex-shrink-0 items-center px-2  xl:min-w-[50px] border border-black rounded-md shadow-sm hover:cursor-pointer "
