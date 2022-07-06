@@ -1,7 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
-
 import logomain from "./siteimages/logomain.png"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import profilepic from "./siteimages/profilepic.svg"
@@ -16,13 +15,13 @@ function header() {
   const {data: session } = useSession();
 
   return (
-      <div className="flex sticky top-0 z-50 md:px-8 py-2
-                    backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
+    <div className="flex sticky top-0 z-50 md:px-8 py-2
+                     backdrop-blur transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/75 supports-backdrop-blur:bg-white/60 dark:bg-transparent" >
         <div className="headerlogo relative h-10 w-20  flex-shrink-0 cursor-pointer">
         <Image objectFit="contain" src={logomain} layout="fill" />
         </div>
 
-       <div className="group flex items-center mx-1 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
+       <div className="group flex items-center mx-0 md:mx-10  px-3 xl:min-w-[250px] border border-black rounded-md shadow-sm hover:cursor-pointer ">
           <i className="bi bi-textarea-resize w-5 h-5 "></i>
           <p className="flex-1 hidden ml-1 lg:inline text-sm font-medium 	">Spaces</p>
           <i className="bi bi-arrow-down-square-fill group-hover:text-blue-700  pl-3 "></i>
@@ -46,7 +45,7 @@ function header() {
        </nav>
         {/* NAVBAR ENDS HERE! */}
 
-      <form className="group flex flex-1 items-center px-2 space-x-2 border border-gray rounded-md hover:border-black">
+      <form className="group flex flex-1 md:flex-0.7 lg:flex-1 items-center px-2 space-x-2  border border-gray rounded-md hover:border-black">
           <i className="bi bi-search h-6 w-6 text-gray-400 group-hover:text-black text-sm font-medium"></i>
           <input className="flex-1 bg-transparent outline-none text-sm font-medium " type="text" placeholder="Search Meowdi"></input>
           <button type="submit" hidden />
@@ -58,12 +57,13 @@ function header() {
           <i className="headicon bi bi-plus-square-dotted"></i>
       </div>
     
-      <div className="group flex items-center justify-center space-x-2 mx-5 px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black">
+      <div className="group flex items-center justify-center space-x-2 mx-1  md:mx-5 md:px-2 lg:hidden border border-black rounded-md shadow-sm hover:bg-black"
+                            onClick={() => signIn()}>
          <i className="headicon bi bi-arrows-expand group-hover:text-slate-50"></i>
       </div>
        
       {session ? (
-        <div className="flex relative items-center h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full"
+        <div className=" relative hidden items-center sm:flex md:shrink-0 min-w-10 h-10 w-10 p-1 lg:pl-3 cursor-pointer border-4 border-inherit rounded-full"
              onClick={() => signOut()}>
         <Image
         className="-z-1 rounded-full"
