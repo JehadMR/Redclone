@@ -29,9 +29,9 @@ const Home: NextPage = () => {
         </div>
         </div>
         {/*Background Color Image ^^^ */}
-        <div className='grid grid-cols-2 gap-1 my-7 mx-5'>
-       <div className="col-start-1 col-end-6"><TopSongs/></div>
-       <div className='col-start-7 col-end-11'> <ProfileCard/> </div>
+        <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-1 my-7 mx-5'>
+       <div className="md:col-start-1 md:col-end-6"><TopSongs/></div>
+       <div className='md:col-start-7 md:col-end-11'> <ProfileCard/> </div>
         </div>
 
        
