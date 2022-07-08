@@ -9,48 +9,50 @@ import axios from "axios"
 
 function TopSongs() {
   const {data: session } = useSession();
-  const [tracks, setTracks] = useState([]);
-  const isInitialMount = useRef(true);
+  const [tracks, setTracks] = useState({});
+  const [loaded, setLoaded] = useState(false);
+
+  const getTracks =   () => {
+    axios.get("/api/tracks").then((response) => {
+       setTracks(response.data);
+       console.log(response.data);
+     });
+    }
 
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-    } else {
-        //useEffect code here to be run on update
-        () => {
-          axios.get("/api/tracks").then((response) => {
-             setTracks(response.data);
-             console.log(response.data);
-           });
-         }
-    }
+    if (loaded == false) {
+       setLoaded(true);
+       getTracks();
+       
+    } 
   });
 
- // useEffect(() => {
- //  axios.get("/api/tracks").then((response) => {
-  //    setTracks(response.data);
-   //   console.log(response.data);
-  //  });
- // }, []);
 
   return (
-    <div className=" border-2 border-black w-full px-5">
-    <div className="flex flex-1  justify-between">
-       <h1 className="text-l md:text-xl">Top Songs</h1>
-       <a href="#">More</a>
+    <div className=" w-full px-5">
+    <div className="flex flex-1 pb-4  justify-between">
+       <h1 className="mt-1 text-2xl font-extrabold text-transparent uppercase tracking-tighest sm:text-3xl lg:text-4xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text">Top Songs</h1>
+       <a  className="mt-1 md:mt-4 text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#">MORE</a>
     </div>
 
-    <div className="topsongsbar flex items-center justify-start">
-      <button onClick={() => console.log(tracks)}>CLICK HERE</button>
-  {/*  {tracks.items.slice(0, 3).map((item, i) => (
-        <div key={item.id} className="border flex-col justify-center items-center p-1 m-1 mb-0 rounded-md shadow-sm hover:cursor-pointer">
-        <img className='border rounded-md shadow-sm' src={item.album?.images[0]?.url} width="100%" />
-        <h1>{item.name}</h1>
-        <h1>{item.artists[0].name}</h1>
+
+
+    <div className="flex flex-1 justify-start items-center py-4 w-5/6 mx-auto md:w-auto">
+      <div className="container grid grid-cols-2 mx-auto space-x-2 space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-6">
+      {tracks?.items?.slice(0, 6).map((item, i) => (
+        <div  key={item} className="group flex flex-col cursor-pointer">
+        <img  className='border border-none rounded-3xl group-hover:shadow-2xl' src={item.album?.images[0]?.url} width="100%" />
+        <div className="flex flex-col justify-start items-center mt-3">
+        <h6 className="text-sm font-medium text-slate-800	">{item.name}</h6>
+        <p className=" text-xs font-medium text-slate-500">{item.artists[0].name}</p>
         </div>
-      
-  ))} */}
+        </div>
+  ))} 
     </div>
+
+    </div>
+
+
     </div>
 
   )
