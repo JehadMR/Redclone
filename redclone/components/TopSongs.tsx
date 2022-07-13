@@ -32,7 +32,7 @@ function TopSongs() {
   return (
     <div className=" w-full px-5">
     <div className="flex flex-1 pb-4  justify-between">
-       <h1 className="mt-1 text-2xl font-extrabold text-transparent uppercase tracking-tighest sm:text-3xl lg:text-4xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text">Top Songs</h1>
+       <h1 className="mt-1 text-l font-extrabold text-transparent uppercase tracking-tighest sm: text-xl lg:text-2xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text">Top Songs</h1>
        <a  className="mt-1 md:mt-4 text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#">MORE</a>
     </div>
 
