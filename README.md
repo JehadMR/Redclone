@@ -1,2 +1,2 @@
 # Redclone
-An app that connects our shared curiousities through music.
+An app that connects our shared curiousities through music & conversation.
