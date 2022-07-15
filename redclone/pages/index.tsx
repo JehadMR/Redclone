@@ -29,9 +29,15 @@ const Home: NextPage = () => {
         </div>
         </div>
         {/*Background Color Image ^^^ */}
-        <div className='grid grid-cols-1 grid-rows-6 my-4 md:grid-cols-12 md:grid-rows-1 md:gap-2 md:my-7 md:mx-5 '>
+        { /* <div className='grid grid-cols-1 grid-rows-6 my-4 md:grid-cols-12 md:grid-rows-1 md:gap-2 md:my-7 md:mx-5 '>
            <div className="row-start-2 row-end-6 col-start-1 md:col-start-1 md:col-end-9 md:row-start-1"><TopSongs/></div>
            <div className="row-start-1 row-end-1 md:col-start-9 md:col-end-13 md:row-start-1"> <ProfileCard/> </div>
+          </div> */}
+
+        <div className="grid overflow-hidden grid-cols-12 grid-rows-1 gap-2 m-3">
+          <div className="box col-span-2"><TopSongs/></div>
+          <div className="box col-span-7">2</div>
+          <div className="box col-span-3"><ProfileCard/></div>
         </div>
 
        
