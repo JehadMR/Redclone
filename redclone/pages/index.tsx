@@ -34,11 +34,14 @@ const Home: NextPage = () => {
            <div className="row-start-1 row-end-1 md:col-start-9 md:col-end-13 md:row-start-1"> <ProfileCard/> </div>
           </div> */}
 
-        <div className="grid overflow-hidden grid-cols-1 grid-rows-1 md:grid-cols-12 md:grid-rows-1 gap-2 m-3">
-          <div className="box md:col-span-3"><TopSongs/></div>
-          <div className="box md:col-span-6">2</div>
-          <div className="box md:col-span-3"><ProfileCard/></div>
+       
+        <div className="grid overflow-hidden grid-cols-1 grid-rows-1 md:grid-cols-12 md:grid-rows-1 gap-2 bg-[#F6F5FA]">
+          <div className="box md:col-span-3 mt-3 ml-3"><TopSongs/></div>
+          <div className="box md:col-span-7 mt-3">2</div>
+          <div className="box md:col-span-2 mt-3 mr-3"><ProfileCard/></div>
         </div>
+ 
+        
 
        
 

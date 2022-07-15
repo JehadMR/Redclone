@@ -30,7 +30,7 @@ function TopSongs() {
 
 
   return (
-    <div className=" w-full p-2 transition-colors duration-500 border  border-slate-900/10 dark:border-slate-50/[0.06] bg-white/65 supports-backdrop-blur:bg-white/60 dark:bg-transparent ">
+    <div className=" w-full p-3 bg-white rounded-lg shadow-lg overflow-hidden">
     <div className="flex flex-1 pb-4  justify-between">
        <h1 className="text-l font-extrabold text-transparent uppercase tracking-tighest  lg:text-xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text"># Top Songs</h1>
        <a  className="text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#"><i className="bi bi-info-circle-fill"></i></a>

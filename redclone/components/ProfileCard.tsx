@@ -48,7 +48,7 @@ function ProfileCard () {
 
   return (
 
-      <div className="flex flex-col justify-center px-5">
+      <div className="flex flex-col justify-center">
   <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden">
     <div className="relative h-[40vw] md:h-[25vw]">
         {/*  object cover img normal */}
