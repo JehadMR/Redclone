@@ -30,22 +30,26 @@ function TopSongs() {
 
 
   return (
-    <div className=" w-full">
+    <div className=" w-full p-2 transition-colors duration-500 border  border-slate-900/10 dark:border-slate-50/[0.06] bg-white/65 supports-backdrop-blur:bg-white/60 dark:bg-transparent ">
     <div className="flex flex-1 pb-4  justify-between">
-       <h1 className="mt-1 text-l font-extrabold text-transparent uppercase tracking-tighest sm: text-xl lg:text-2xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text">Top Songs</h1>
-       <a  className="mt-1 md:mt-4 text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#">MORE</a>
+       <h1 className="text-l font-extrabold text-transparent uppercase tracking-tighest  lg:text-xl   bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text"># Top Songs</h1>
+       <a  className="text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#"><i className="bi bi-info-circle-fill"></i></a>
     </div>
 
 
 
-    <div className="flex flex-1 flex-col justify-start items-center py-4 w-5/6 mx-auto md:w-auto">
+    <div className="flex flex-1 flex-col justify-start  py-4  mx-auto md:w-auto">
       {
-        tracks?.items? ( tracks?.items?.slice(0, 6).map((item, i) => (
-            <div  key={item} className="group flex justify-start cursor-pointer py-1">
-            <img  className='border border-none rounded-3xl group-hover:shadow-xl mr-2 h-16 w-16'  src={item.album?.images[0]?.url} width="100%" />
-            <div className="flex flex-col justify-start items-center" key={item.artists[0]}>
+        tracks?.items? ( tracks?.items?.slice(0, 4).map((item, i) => (
+            <div  key={item} className="group flex justify-start cursor-pointer py-1 w-full">
+            <img  className='border border-none rounded-3xl group-hover:shadow-xl h-16 w-16'  src={item.album?.images[0]?.url} width="100%" />
+            <div className="flex flex-col justify-start pl-5" key={item.artists[0]}>
             <h6 className="text-sm font-medium text-slate-800 " key={item.name}>{item.name}</h6>
             <p className=" text-xs font-medium text-slate-500" key={item.artists[0].name}>{item.artists[0].name}</p>
+            </div>
+            <div className="flex flex-1 justify-end mr-2 h-5 w-3">
+            <a  className="text-sm font-medium cursor-pointer text-slate-800 hover:bg-gradient-to-r hover:from-green-300 hover:via-blue-500 hover:to-purple-600 hover:bg-clip-text" href="#"><i className="bi bi-play-circle-fill"></i></a>
+            
             </div>
             </div>)))
             :
