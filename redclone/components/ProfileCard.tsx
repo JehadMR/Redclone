@@ -49,8 +49,8 @@ function ProfileCard () {
   return (
 
       <div className="flex flex-col justify-center">
-  <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden">
-    <div className="relative h-[40vw] md:h-[25vw]">
+  <div className="max-w-xl bg-white rounded-lg shadow-lg overflow-hidden md:h-80">
+    <div className="relative  md:h-36 h-[40vw]">
         {/*  object cover img normal */}
         <div className="h-auto">
         <Image src={result?.data?.item?.album?.images? result.data.item.album.images[0].url : "https://images.unsplash.com/photo-1595491542937-3de00ac7e08a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"} 
